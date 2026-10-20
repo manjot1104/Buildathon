@@ -5,6 +5,8 @@ import { createClient } from "@/lib/services/project-service";
 import { connectDb } from "@/lib/db/connection";
 import { Client } from "@/models";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   try {
     const { workspace } = await requireAuthWorkspace();

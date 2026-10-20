@@ -7,6 +7,8 @@ import { connectDb } from "@/lib/db/connection";
 import { User } from "@/models";
 import { toMinor } from "@/lib/money";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({
   workspaceName: z.string().min(1).max(120),
   type: z.enum(["freelancer", "agency"]),

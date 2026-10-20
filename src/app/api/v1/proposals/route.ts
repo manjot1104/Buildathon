@@ -7,6 +7,8 @@ import { ChangeProposal } from "@/models";
 import { toMinor } from "@/lib/money";
 import { requireCanSendProposals } from "@/lib/auth/authorization";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   try {
     const { workspace } = await requireAuthWorkspace();

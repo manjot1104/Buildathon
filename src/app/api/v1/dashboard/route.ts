@@ -10,6 +10,8 @@ import {
   Project,
 } from "@/models";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const { workspace } = await requireAuthWorkspace();

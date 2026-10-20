@@ -5,6 +5,8 @@ import { connectDb } from "@/lib/db/connection";
 import { AppError } from "@/lib/errors";
 import { ChangeProposal, ClientRequest, ScopeAnalysis } from "@/models";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { requestId: string } };
 
 export async function GET(_req: Request, { params }: Ctx) {

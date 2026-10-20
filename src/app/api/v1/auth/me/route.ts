@@ -4,6 +4,8 @@ import { connectDb } from "@/lib/db/connection";
 import { Workspace, WorkspaceMembership } from "@/models";
 import { getActiveWorkspaceId } from "@/lib/api/workspace";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const session = await requireSession();

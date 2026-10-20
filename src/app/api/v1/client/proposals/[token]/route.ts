@@ -12,6 +12,8 @@ import { generateProposalPdf } from "@/lib/pdf/proposal-pdf";
 import { ProposalDecision } from "@/models";
 import { connectDb } from "@/lib/db/connection";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { token: string } };
 
 export async function GET(req: Request, { params }: Ctx) {

@@ -3,6 +3,8 @@ import { jsonOk, jsonError } from "@/lib/api/response";
 import { getEnv } from "@/lib/config/env";
 import { logoutUser } from "@/lib/services/auth-service";
 
+export const dynamic = "force-dynamic";
+
 export async function POST() {
   try {
     const env = getEnv();

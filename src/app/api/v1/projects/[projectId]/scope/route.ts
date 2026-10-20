@@ -8,6 +8,8 @@ import { AppError } from "@/lib/errors";
 import { Project, ScopeVersion } from "@/models";
 import { toMinor } from "@/lib/money";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { projectId: string } };
 
 export async function GET(_req: Request, { params }: Ctx) {

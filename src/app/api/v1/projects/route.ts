@@ -6,6 +6,8 @@ import { connectDb } from "@/lib/db/connection";
 import { Client, Project } from "@/models";
 import { toMinor } from "@/lib/money";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   try {
     const { workspace } = await requireAuthWorkspace();

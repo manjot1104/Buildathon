@@ -2,6 +2,8 @@ import { z } from "zod";
 import { jsonOk, jsonError } from "@/lib/api/response";
 import { loginUser } from "@/lib/services/auth-service";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({
   email: z.string().email(),
   password: z.string().min(1),

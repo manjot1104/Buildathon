@@ -10,6 +10,8 @@ import {
 import { ChangeProposal, ProposalDecision } from "@/models";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { proposalId: string } };
 
 export async function GET(_req: Request, { params }: Ctx) {

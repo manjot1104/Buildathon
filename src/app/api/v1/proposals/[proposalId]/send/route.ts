@@ -3,6 +3,8 @@ import { requireAuthWorkspace } from "@/lib/api/workspace";
 import { assertObjectId, requireCanSendProposals } from "@/lib/auth/authorization";
 import { sendProposal } from "@/lib/services/proposal-service";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { proposalId: string } };
 
 export async function POST(_req: Request, { params }: Ctx) {

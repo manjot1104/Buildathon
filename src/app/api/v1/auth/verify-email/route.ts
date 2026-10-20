@@ -2,6 +2,8 @@ import { z } from "zod";
 import { jsonOk, jsonError } from "@/lib/api/response";
 import { verifyEmail } from "@/lib/services/auth-service";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({ token: z.string().min(10) });
 
 export async function POST(req: Request) {

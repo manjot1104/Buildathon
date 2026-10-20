@@ -10,6 +10,8 @@ import { isAiConfigured } from "@/lib/config/env";
 import { AppError } from "@/lib/errors";
 import { ANALYSIS_CLASSIFICATIONS } from "@/models/enums";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { requestId: string } };
 
 const manualSchema = z.object({

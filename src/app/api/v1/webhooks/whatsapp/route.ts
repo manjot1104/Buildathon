@@ -4,6 +4,8 @@ import { getWhatsAppProvider } from "@/lib/providers/whatsapp";
 import { AppError } from "@/lib/errors";
 import { logger } from "@/lib/logger";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(req: Request) {
   const env = getEnv();
   const url = new URL(req.url);

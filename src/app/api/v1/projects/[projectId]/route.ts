@@ -7,6 +7,8 @@ import { AppError } from "@/lib/errors";
 import { Client, ClientRequest, ChangeProposal, Project, ScopeVersion } from "@/models";
 import { recordAudit } from "@/lib/services/audit";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { projectId: string } };
 
 export async function GET(_req: Request, { params }: Ctx) {

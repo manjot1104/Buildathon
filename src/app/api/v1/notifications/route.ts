@@ -4,6 +4,8 @@ import { connectDb } from "@/lib/db/connection";
 import { Notification } from "@/models";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     const { session, workspace } = await requireAuthWorkspace();

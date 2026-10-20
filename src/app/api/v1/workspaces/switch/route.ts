@@ -4,6 +4,8 @@ import { requireSession } from "@/lib/auth/session";
 import { requireWorkspaceMember } from "@/lib/auth/authorization";
 import { setWorkspaceCookieValue } from "@/lib/api/workspace";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({ workspaceId: z.string().min(1) });
 
 export async function POST(req: Request) {

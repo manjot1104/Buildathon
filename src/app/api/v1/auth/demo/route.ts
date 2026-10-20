@@ -5,6 +5,8 @@ import { connectDb } from "@/lib/db/connection";
 import { getEnv } from "@/lib/config/env";
 import { User } from "@/models";
 
+export const dynamic = "force-dynamic";
+
 const DEMO_EMAIL = "demo@scopepilot.local";
 
 function requestOrigin(request: Request): string {

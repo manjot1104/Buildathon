@@ -2,6 +2,8 @@ import { z } from "zod";
 import { jsonOk, jsonError } from "@/lib/api/response";
 import { requestPasswordReset } from "@/lib/services/auth-service";
 
+export const dynamic = "force-dynamic";
+
 const schema = z.object({ email: z.string().email() });
 
 export async function POST(req: Request) {

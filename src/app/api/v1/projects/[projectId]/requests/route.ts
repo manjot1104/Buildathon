@@ -7,6 +7,8 @@ import { connectDb } from "@/lib/db/connection";
 import { ClientRequest } from "@/models";
 import { REQUEST_PRIORITIES, REQUEST_SOURCES } from "@/models/enums";
 
+export const dynamic = "force-dynamic";
+
 type Ctx = { params: { projectId: string } };
 
 export async function GET(req: Request, { params }: Ctx) {
