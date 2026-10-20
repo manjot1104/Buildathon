@@ -1,0 +1,84 @@
+openapi: 3.0.3
+info:
+  title: ScopePilot API
+  version: 1.0.0
+  description: Versioned REST API for ScopePilot (`/api/v1`).
+servers:
+  - url: /api/v1
+paths:
+  /health:
+    get:
+      summary: Health and integration readiness
+      responses:
+        "200":
+          description: Status payload
+  /auth/register:
+    post:
+      summary: Register freelancer account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password, name]
+              properties:
+                email: { type: string, format: email }
+                password: { type: string }
+                name: { type: string }
+      responses:
+        "201": { description: Created }
+  /auth/login:
+    post:
+      summary: Login
+      responses:
+        "200": { description: Session cookie set }
+  /auth/logout:
+    post:
+      summary: Logout / revoke session
+      responses:
+        "200": { description: OK }
+  /auth/me:
+    get:
+      summary: Current user and workspaces
+      responses:
+        "200": { description: OK }
+  /projects:
+    get:
+      summary: List projects in active workspace
+    post:
+      summary: Create project
+  /clients:
+    get:
+      summary: List clients
+    post:
+      summary: Create client
+  /proposals:
+    get:
+      summary: List proposals
+    post:
+      summary: Create proposal draft
+  /proposals/{proposalId}/send:
+    post:
+      summary: Send proposal and issue client token
+  /client/proposals/{token}:
+    get:
+      summary: Client-facing proposal view
+    post:
+      summary: Approve, reject, or request clarification
+  /dashboard:
+    get:
+      summary: Workspace dashboard metrics
+  /invoices:
+    get:
+      summary: List invoices
+    post:
+      summary: Create invoice from approved proposal
+    put:
+      summary: Record payment
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: scopepilot_session
